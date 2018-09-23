@@ -10,13 +10,13 @@ def count(arr,f,n):
 	i=first(arr,l,r,f,n)
 	if(i==-1):
 		return i
-	j=last(arr,i+1,n-1,f,n)
+	j=last(arr,i,n-1,f,n)
 	return j-i+1
 '''f=input("enter element to be searched")'''
 def first(arr,l,r,f,n):
 	if(l<=r):
 		m=int((l+r)/2)
-		if((int(arr[m-1])<f or m==0)and int(arr[m])==f):
+		if(m==0 or (int(arr[m-1])<f)and int(arr[m])==f):
 			return m
 		elif(arr[m]>f or arr[m]==f):
 			return first(arr,l,(m-1),f,n)
@@ -26,7 +26,7 @@ def first(arr,l,r,f,n):
 def last(arr,l,r,f,n):
 	if(l<=r):
 		m=int((l+r)/2)
-		if((f<int(arr[m+1]) or m==n-1)and int(arr[m])==f):
+		if((m==n-1 or f<int(arr[m+1]))and int(arr[m])==f):
 			return m
 		elif(arr[m]<f or arr[m]==f):
 			return last(arr,(m+1),r,f,n)
@@ -37,8 +37,8 @@ def last(arr,l,r,f,n):
 
 
 
-arr = [1, 2, 2, 2, 2, 3, 3, 3] 
-f= 3  # Element to be counted in arr[] 
+arr = [1, 2, 2, 2, 2, 3, 3, 3,5,7,8,9,9,11] 
+f= 9# Element to be counted in arr[] 
 n = len(arr)
 c = count(arr, f, n) 
 print ("%d occurs %d times "%(f, c)) 
