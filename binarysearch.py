@@ -1,9 +1,10 @@
-"""n=input("enter count")
+"""n=input("enter count")				//Program to search for an element in a sorted array and display number of occurences,input given
 arr = []
 print("Enter",n,"values")
 for i in range(int(n)):
 	x = int(input())
-	arr.append(x)   """
+	arr.append(x)   
+	f=input("enter element to be searched")"""
 def count(arr,f,n):
 	l=0
 	r=n-1
@@ -12,7 +13,7 @@ def count(arr,f,n):
 		return i
 	j=last(arr,i,n-1,f,n)
 	return j-i+1
-'''f=input("enter element to be searched")'''
+
 def first(arr,l,r,f,n):
 	if(l<=r):
 		m=int((l+r)/2)
